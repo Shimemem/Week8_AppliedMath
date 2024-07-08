@@ -16,6 +16,11 @@ public class Tile : MonoBehaviour
     public int distance = 0;
 
     private List<Tile> adjacencyList = new List<Tile>();
+
+    //For A*
+    public float f = 0;
+    public float g = 0;
+    public float h = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +57,8 @@ public class Tile : MonoBehaviour
         visited = false;
         parent = null;
         distance = 0;
+
+        f = g = h = 0;
     }
     
     public void FindNeighbors(float jumpHeight)
